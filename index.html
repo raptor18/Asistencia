@@ -1,0 +1,48 @@
+<html>
+
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<head>
+	<title>Ejemplo de inserción</title>
+</head>
+
+<body>
+
+<h1 align="center"> Ejemplo de inserción de datos</h1>
+
+Nombre: <input type="text" id="tbNombre"/>
+Apellido Paterno: <input type="text" id="tbApellidoPaterno"/>
+Apellido Materno: <input type="text" id="tbApellidoMaterno"/>
+Fecha: <input type="date" id="tbFecha"/>
+
+<button id="btnLimpiar">Limpiar</button>
+<button id="btnGuardar">Guardar</button>
+
+
+<script src="Scripts/jquery/jquery-3.0.0.min.js"></script>
+<script src="Scripts/funciones.js"></script>
+<script src="Scripts/funcionesAjax.js"></script>
+<script>
+
+$().ready(function(){
+
+})
+
+	$("#btnLimpiar").click(function(){
+		limpiar();
+		$("tnNombre").focus();
+	});
+
+	$("#btnGuardar").click(function(){
+		if(validarDatos()==true){
+			guardarDatos($("#tbNombre").val(), $("#tbApellidoPaterno").val(), $("#tbApellidoMaterno").val(), $("#tbFecha").val());
+	}
+		
+	});
+
+
+</script>
+
+</body>
+
+</html>
